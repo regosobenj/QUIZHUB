@@ -1,0 +1,612 @@
+1 / 1 point
+Multiple choice
+A developer wants a route that only responds to form submissions (POST requests) at /tasks. Which method should be used to register it?
+
+$routes->resource('/tasks', ...)
+, Not Selected
+$routes->get('/tasks', ...)
+, Not Selected
+$routes->view('/tasks', ...)
+, Not Selected
+Correct answer:
+$routes->post('/tasks', ...)
+Results for question 2.
+2
+1 / 1 point
+True or False
+It is possible for a single CodeIgniter controller to have multiple methods, each handling a different route.
+
+Correct answer:
+True
+False
+Results for question 3.
+3
+1 / 1 point
+True or False
+Passing data from a controller to a view typically involves an associative array, where each key becomes a variable name inside the view.
+
+Correct answer:
+True
+False
+Results for question 4.
+4
+1 / 1 point
+Multiple choice
+Which symbol/syntax is used in a CodeIgniter View to output an escaped PHP value directly into HTML?
+
+Correct answer:
+<?= ?>
+
+<# #>
+, Not Selected
+{{ }}
+, Not Selected
+<%= %>
+, Not Selected
+Results for question 5.
+5
+1 / 1 point
+Multiple choice
+Why might project structure (separating routes, controllers, models, and views into their own folders) matter more as an application grows larger?
+
+It has no real benefit; it is purely a style preference
+, Not Selected
+It is only useful for teams larger than 10 developers
+, Not Selected
+It reduces the number of files needed by half
+, Not Selected
+Correct answer:
+It keeps related code easy to find and reduces the chance that changes in one part accidentally break another
+Results for question 6.
+6
+0 / 1 point
+Fill in the Blank
+What is the name of the CodeIgniter file where database connection settings are typically stored? 
+Incorrect answer:
+Router
+Correct Answer:
+.env
+Results for question 7.
+7
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+findAll()
+Correct match:
+Retrieves every record from a Model's table
+Results for question 8.
+8
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+Controller
+Correct match:
+Decides how to respond to a matched route
+Results for question 9.
+9
+1 / 1 point
+Multiple choice
+Which of these correctly loads the view file located at app/Views/tasks/index.php?
+
+Correct answer:
+view('tasks/index');
+
+render('tasks/index');
+, Not Selected
+include('tasks/index');
+, Not Selected
+view('tasks.index.php');
+, Not Selected
+Results for question 10.
+10
+0 / 1 point
+Multiple choice
+A page at /tasks should show a list of tasks from a database. Put the following in the correct order of execution: (1) Model retrieves records, (2) Route matches the URL to a controller, (3) View displays the data, (4) Controller calls the Model and passes data to the View.
+
+1, 2, 3, 4
+, Not Selected
+2, 1, 4, 3
+, Not Selected
+4, 2, 1, 3
+, Not Selected
+Incorrect answer:
+2, 4, 1, 3
+Correct Answer:
+2, 1, 4, 3
+Results for question 11.
+11
+1 / 1 point
+True or False
+Once a route is defined, visiting a matching URL will always run the associated controller method, regardless of whether that method actually exists.
+
+True
+Correct answer:
+False
+Results for question 12.
+12
+1 / 1 point
+Multiple choice
+A task list page works correctly, but clicking into any individual task shows "Undefined variable $task." The controller code is: $data['tasks'] = $model->find($id); return view('tasks/show', $data);. What is the bug?
+
+Correct answer:
+The controller stores the single record under the key 'tasks' (plural) but the view expects $task (singular)
+
+The Model connection failed
+, Not Selected
+The route does not accept an id parameter
+, Not Selected
+find() cannot retrieve a single record
+, Not Selected
+Results for question 13.
+13
+1 / 1 point
+Multiple choice
+A developer chooses to hardcode a list of tasks directly in a controller using a PHP array, even though a database table already exists for tasks. What is the main drawback of this approach?
+
+Correct answer:
+Any changes to the task list require editing code instead of just the data, and the two data sources can fall out of sync
+
+Views cannot loop through array data
+, Not Selected
+Controllers are not allowed to contain arrays
+, Not Selected
+PHP arrays cannot store multiple records
+, Not Selected
+Results for question 14.
+14
+0 / 1 point
+True or False
+In CodeIgniter, routes must always be defined using the GET method only.
+
+Incorrect answer:
+True
+Correct Answer:
+False
+False
+Results for question 15.
+15
+1 / 1 point
+Multiple choice
+A project combining routing (Module 1) and data access (Module 2) needs a task list page. A developer skips creating a Model entirely and runs raw SQL queries directly inside the Controller instead. What is the most significant long-term drawback?
+
+It would make the page load slower in every case
+, Not Selected
+Correct answer:
+Database logic becomes scattered across multiple controllers instead of centralized in one reusable place, making the code harder to maintain
+
+Controllers technically cannot contain SQL syntax
+, Not Selected
+It is not technically possible to query a database from inside a Controller
+, Not Selected
+Results for question 16.
+16
+1 / 1 point
+Multiple choice
+A Model's $allowedFields includes 'title' and 'status'. A new 'priority' column is added to the database table, but $allowedFields is never updated. What happens when a controller tries to save a priority value?
+
+CodeIgniter throws a fatal, uncatchable error immediately
+, Not Selected
+The database automatically adds it to $allowedFields
+, Not Selected
+Correct answer:
+The priority value is silently dropped and not saved, even though the column exists
+
+The Model refuses to run any queries at all
+, Not Selected
+Results for question 17.
+17
+1 / 1 point
+True or False
+findAll() returns only the first matching record from a table.
+
+True
+Correct answer:
+False
+Results for question 18.
+18
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+Model
+Correct match:
+Manages data and communicates with the database
+Results for question 19.
+19
+1 / 1 point
+True or False
+The public folder should contain the application's business logic, including all Models.
+
+True
+Correct answer:
+False
+Results for question 20.
+20
+1 / 1 point
+True or False
+Using Query Builder instead of writing raw SQL strings reduces the risk of SQL injection because Query Builder escapes values automatically.
+
+Correct answer:
+True
+False
+Results for question 21.
+21
+1 / 1 point
+Multiple choice
+Two developers debate whether to use (:num) or (:any) for a route capturing a task ID. Why might (:num) be the better choice?
+
+Correct answer:
+(:num) restricts the segment to digits only, preventing obviously invalid IDs like text from reaching the controller
+
+(:num) allows special characters that (:any) does not
+, Not Selected
+(:any) is deprecated in CodeIgniter 4
+, Not Selected
+(:num) runs faster in every situation
+, Not Selected
+Results for question 22.
+22
+0 / 1 point
+Multiple choice
+Which Query Builder method retrieves a single record matching a specific primary key value?
+
+find($id)
+, Not Selected
+Incorrect answer:
+first($id)
+Correct Answer:
+find($id)
+
+findOne($id)
+, Not Selected
+getById($id)
+, Not Selected
+Results for question 23.
+23
+1 / 1 point
+True or False
+Every CodeIgniter application must have at least one Model, even if it does not use a database.
+
+True
+Correct answer:
+False
+Results for question 24.
+24
+1 / 1 point
+Multiple choice
+After correctly configuring .env and creating a Model, a page still shows a database connection error. Which of these is the LEAST likely cause?
+
+The database name in .env does not match the actual database
+, Not Selected
+The database credentials in .env are incorrect
+, Not Selected
+MySQL is not running
+, Not Selected
+Correct answer:
+The view file does not contain a <title> tag
+Results for question 25.
+25
+1 / 1 point
+Multiple choice
+A team stores database passwords directly inside a Model's PHP file instead of in .env. Why is this a weaker practice?
+
+PHP files cannot store passwords longer than 8 characters
+, Not Selected
+Correct answer:
+Credentials committed inside code are more likely to be exposed and are harder to change per environment than values kept in .env
+
+Models cannot technically contain string values
+, Not Selected
+It causes Query Builder to stop functioning
+, Not Selected
+Results for question 26.
+26
+0 / 1 point
+Multiple choice
+A Model's table has columns id, title, status, and created_at. Which line of code would correctly insert a new row with only a title, using an instance $model?
+
+$model->new(['title' => 'Buy groceries']);
+, Not Selected
+$model->insert(['title' => 'Buy groceries']);
+, Not Selected
+Incorrect answer:
+$model->create('title', 'Buy groceries');
+Correct Answer:
+$model->insert(['title' => 'Buy groceries']);
+
+$model->add(['Buy groceries']);
+, Not Selected
+Results for question 27.
+27
+1 / 1 point
+Multiple choice
+Between SELECT * FROM tasks WHERE status = '$status' built by directly inserting a variable into a SQL string, versus $builder->where('status', $status)->get();, which is safer and why?
+
+The raw SQL is safer because it is more explicit
+, Not Selected
+Both are equally safe since PHP validates all strings by default
+, Not Selected
+Neither is safe unless a Model class is used
+, Not Selected
+Correct answer:
+The Query Builder version is safer because it automatically escapes the value, protecting against SQL injection
+Results for question 28.
+28
+1 / 1 point
+Multiple choice
+Which of the following correctly describes the "C" in MVC?
+
+Class
+, Not Selected
+Component
+, Not Selected
+Configuration
+, Not Selected
+Correct answer:
+Controller
+Results for question 29.
+29
+1 / 1 point
+Fill in the Blank
+What term describes an unauthorized attempt to manipulate a database by injecting malicious SQL through user input, which Query Builder helps prevent? 
+Correct answer:
+SQL injection
+Results for question 30.
+30
+1 / 1 point
+Multiple choice
+A controller method is defined as public function about() { return view('about'); }. What must exist for this to work correctly?
+
+A Model named About
+, Not Selected
+A database table named about
+, Not Selected
+Correct answer:
+A route pointing to this method, and a view file at app/Views/about.php
+
+A .env entry named ABOUT
+, Not Selected
+Results for question 31.
+31
+1 / 1 point
+Multiple choice
+A Model needs to only allow updates to the 'title' and 'status' fields, not 'created_at'. Which property correctly enforces this?
+
+protected $table = ['title', 'status'];
+, Not Selected
+protected $primaryKey = ['title', 'status'];
+, Not Selected
+Correct answer:
+protected $allowedFields = ['title', 'status'];
+
+protected $readOnly = ['title', 'status'];
+, Not Selected
+Results for question 32.
+32
+1 / 1 point
+True or False
+The Controller is the component in MVC responsible for deciding what response to send back for a given request.
+
+Correct answer:
+True
+False
+Results for question 33.
+33
+1 / 1 point
+True or False
+A Model's $allowedFields property lists the database columns that are permitted to be set through mass assignment (like insert() or update()).
+
+Correct answer:
+True
+False
+Results for question 34.
+34
+1 / 1 point
+Multiple choice
+Why would skipping the Model layer and querying the database directly inside a View be considered bad practice?
+
+Views cannot technically connect to a database in CodeIgniter
+, Not Selected
+It would make the page load faster
+, Not Selected
+Correct answer:
+It breaks the separation of concerns central to MVC, mixing data access with presentation and making the code harder to maintain
+
+It is not possible for PHP to run database queries inside a .php file
+, Not Selected
+Results for question 35.
+35
+1 / 1 point
+Multiple choice
+A model defines protected $allowedFields = ['title', 'status'];, but a controller attempts to insert a record with a description field as well. What will most likely happen?
+
+CodeIgniter automatically adds description to $allowedFields
+, Not Selected
+An exception is always thrown, halting the application
+, Not Selected
+Correct answer:
+The description value is silently ignored because it is not in $allowedFields
+
+The entire insert operation succeeds, including description
+, Not Selected
+Results for question 36.
+36
+1 / 1 point
+True or False
+The Model layer in MVC is responsible for rendering the final HTML sent to the browser.
+
+True
+Correct answer:
+False
+Results for question 37.
+37
+1 / 1 point
+True or False
+Chaining Query Builder methods, such as where() followed by orderBy(), allows you to filter and sort a query in a single statement.
+
+Correct answer:
+True
+False
+Results for question 38.
+38
+1 / 1 point
+True or False
+The .env file is used to store view templates.
+
+True
+Correct answer:
+False
+Results for question 39.
+39
+1 / 1 point
+Fill in the Blank
+What is the term for the special class in CodeIgniter that represents and manages a specific database table? 
+Correct answer:
+Model
+Results for question 40.
+40
+1 / 1 point
+Multiple choice
+A view attempts to display $tasks using a foreach loop, but the page shows the error "Undefined variable $tasks." What is the most likely cause?
+
+The Model's $table property is misspelled
+, Not Selected
+The route was defined with the wrong HTTP verb
+, Not Selected
+The database connection failed
+, Not Selected
+Correct answer:
+The controller did not include tasks in the data array passed to view()
+Results for question 41.
+41
+1 / 1 point
+Multiple choice
+A developer needs a route where visiting /users/45/edit loads the edit form for user ID 45. Which route definition is correct?
+
+$routes->view('/users/45/edit');
+, Not Selected
+$routes->post('/users/(:num)/edit', 'Users::edit');
+, Not Selected
+$routes->get('/users/edit/(:num)', 'Users::edit');
+, Not Selected
+Correct answer:
+$routes->get('/users/(:num)/edit', 'Users::edit/$1');
+Results for question 42.
+42
+1 / 1 point
+Multiple choice
+Which CodeIgniter file is typically used to store database connection settings such as hostname, username, and database name?
+
+Routes.php
+, Not Selected
+Autoload.php
+, Not Selected
+Correct answer:
+.env
+
+Database.php only
+, Not Selected
+Results for question 43.
+43
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+where()
+Correct match:
+Filters query results based on a condition
+Results for question 44.
+44
+1 / 1 point
+Multiple choice
+Which Query Builder method retrieves every record from a Model's associated table?
+
+selectAll()
+, Not Selected
+Correct answer:
+findAll()
+
+find()
+, Not Selected
+getAll()
+, Not Selected
+Results for question 45.
+45
+1 / 1 point
+Multiple choice
+What is the main advantage of separating an application's routes into app/Config/Routes.php rather than scattering URL logic throughout controllers?
+
+It is required for Composer to function
+, Not Selected
+Correct answer:
+It gives a single, organized place to see and manage all the URLs the application responds to
+
+It makes the application run faster
+, Not Selected
+It removes the need for controllers entirely
+, Not Selected
+Results for question 46.
+46
+1 / 1 point
+Multiple choice
+Which method would you chain to where('status', 'pending') to also sort the returned records by their creation date, newest first?
+
+arrange('created_at', 'newest')
+, Not Selected
+filter('created_at')
+, Not Selected
+sort('created_at')
+, Not Selected
+Correct answer:
+orderBy('created_at', 'DESC')
+Results for question 47.
+47
+1 / 1 point
+Multiple choice
+A route is defined only as $routes->get('/tasks', 'Tasks::index');. A user submits a form via POST to the same /tasks URL expecting Tasks::store() to run. What will most likely happen?
+
+Tasks::store() runs normally because the URL matches
+, Not Selected
+The database saves the data anyway, bypassing the routing system
+, Not Selected
+Correct answer:
+The request fails or returns an error, since no POST route was defined for /tasks
+
+CodeIgniter automatically creates a POST route based on the GET one
+, Not Selected
+Results for question 48.
+48
+1 / 1 point
+True or False
+CodeIgniter automatically creates database tables the first time a Model is used.
+
+True
+Correct answer:
+False
+Results for question 49.
+49
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+.env
+Correct match:
+Stores environment-specific settings such as database credentials
+Results for question 50.
+50
+0 / 1 point
+Multiple choice
+Which folder in a CodeIgniter 4 project contains the application's controllers, models, and views?
+
+writable
+, Not Selected
+app
+, Not Selected
+Incorrect answer:
+public
+Correct Answer:
+app
+
+system

@@ -1,0 +1,616 @@
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+Validation rule
+Correct match:
+Describes what submitted input must satisfy before saving
+Results for question 2.
+2
+1 / 1 point
+Multiple choice
+A login page shows 'Invalid credentials' only after a failed attempt and then the message disappears. What feature most likely supports this?
+
+Correct answer:
+Flash data
+
+File upload rules
+, Not Selected
+Seeder classes
+, Not Selected
+Route placeholders
+, Not Selected
+Results for question 3.
+3
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+Session
+Correct match:
+Stores small user-related data across requests
+Results for question 4.
+4
+1 / 1 point
+Multiple choice
+What should happen after a successful login?
+
+Delete all routes.
+, Not Selected
+Disable the session library.
+, Not Selected
+Correct answer:
+Store appropriate user identity data in the session and redirect to a protected page.
+
+Display the password in the browser.
+, Not Selected
+Results for question 5.
+5
+1 / 1 point
+Multiple choice
+Why should access-control checks happen before displaying protected content?
+
+Correct answer:
+To prevent unauthorized users from seeing restricted pages.
+
+To remove the need for HTML.
+, Not Selected
+To avoid using routes.
+, Not Selected
+To make CSS files load faster.
+, Not Selected
+Results for question 6.
+6
+1 / 1 point
+True or False
+Validation should normally run after saving the submitted data.
+
+True
+Correct answer:
+False
+Results for question 7.
+7
+1 / 1 point
+Multiple choice
+Which line is a reasonable way to remove all authentication session data on logout?
+
+view('logout')->erase();
+, Not Selected
+$model->dropSessionTable();
+, Not Selected
+Correct answer:
+session()->destroy();
+
+$routes->deleteAll();
+, Not Selected
+Results for question 8.
+8
+1 / 1 point
+Multiple choice
+A page successfully saves a customer but displays a blank list afterward. The controller calls return view('customers/index') without passing records. What should be checked first?
+
+Whether the CSS file has a body tag.
+, Not Selected
+Whether the public folder was renamed to app.
+, Not Selected
+Correct answer:
+Whether customer data is retrieved and passed to the view.
+
+Whether the image upload folder exists.
+, Not Selected
+Results for question 9.
+9
+1 / 1 point
+Multiple choice
+A student saves uploaded avatars before checking file type and size. What is the main risk?
+
+Correct answer:
+Unsafe or unexpected files may already be stored before rejection.
+
+The controller will always skip routing.
+, Not Selected
+The browser will not display HTML.
+, Not Selected
+The database cannot store filenames.
+, Not Selected
+Results for question 10.
+10
+1 / 1 point
+True or False
+A protected page should verify the user's authenticated state before showing restricted content.
+
+Correct answer:
+True
+False
+Results for question 11.
+11
+1 / 1 point
+Fill in the Blank
+What term refers to the process of verifying a user's identity? 
+Correct answer:
+Authentication
+Results for question 12.
+12
+1 / 1 point
+True or False
+Flash data is intended to last permanently until manually deleted from the database.
+
+True
+Correct answer:
+False
+Results for question 13.
+13
+1 / 1 point
+Multiple choice
+What is the safest general description of authentication?
+
+Styling a login button.
+, Not Selected
+Rendering a database table.
+, Not Selected
+Changing all routes to POST.
+, Not Selected
+Correct answer:
+Confirming a user's identity before allowing access.
+Results for question 14.
+14
+1 / 1 point
+True or False
+A Model can be used by a controller to insert, update, retrieve, or delete records.
+
+Correct answer:
+True
+False
+Results for question 15.
+15
+1 / 1 point
+True or False
+File type and file size restrictions help reduce unsafe upload behavior.
+
+Correct answer:
+True
+False
+Results for question 16.
+16
+1 / 1 point
+Multiple choice
+Why should a Delete action normally be submitted using POST rather than a normal GET link?
+
+POST is required for all routes.
+, Not Selected
+GET routes cannot use controllers.
+, Not Selected
+Correct answer:
+Destructive actions should not be triggered by simple page visits or crawlers.
+
+GET cannot open pages.
+, Not Selected
+Results for question 17.
+17
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+Flash data
+Correct match:
+Stores a short message for the next request
+Results for question 18.
+18
+1 / 1 point
+Multiple choice
+Which CodeIgniter service is commonly used to access session functionality?
+
+view()
+, Not Selected
+Correct answer:
+session()
+
+model()
+, Not Selected
+service('routes')
+, Not Selected
+Results for question 19.
+19
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+old()
+Correct match:
+Restores previously submitted input on a redisplayed form
+Results for question 20.
+20
+1 / 1 point
+Multiple choice
+Which line is a reasonable way to set session data in CodeIgniter?
+
+$routes->setSession(true);
+, Not Selected
+$model->session('on');
+, Not Selected
+view()->set('login');
+, Not Selected
+Correct answer:
+session()->set(['isLoggedIn' => true]);
+Results for question 21.
+21
+1 / 1 point
+Multiple choice
+What is the main purpose of logout?
+
+To insert a database row.
+, Not Selected
+To change the public folder.
+, Not Selected
+To create a new user record.
+, Not Selected
+Correct answer:
+To remove the user's authenticated session state.
+Results for question 22.
+22
+1 / 1 point
+Multiple choice
+Which CodeIgniter UploadedFile method generates a safer unique filename before moving the file?
+
+escapeName()
+, Not Selected
+makeSafe()
+, Not Selected
+Correct answer:
+getRandomName()
+
+newFilename()
+, Not Selected
+Results for question 23.
+23
+1 / 1 point
+True or False
+Hiding a menu link is enough to secure a protected page even if the route remains accessible.
+
+True
+Correct answer:
+False
+Results for question 24.
+24
+1 / 1 point
+Multiple choice
+A user logs in successfully, but protected pages still redirect to login. What should be checked first?
+
+Whether the CSS file is minified.
+, Not Selected
+Correct answer:
+Whether the expected session key is set and read consistently.
+
+Whether the public folder contains images.
+, Not Selected
+Whether the database table has a title column.
+, Not Selected
+Results for question 25.
+25
+1 / 1 point
+Multiple choice
+Why should passwords be verified using a password-checking function rather than comparing plain text?
+
+Plain text comparison is slower in every case.
+, Not Selected
+It removes the need for login forms.
+, Not Selected
+Correct answer:
+Secure verification works with hashed passwords instead of exposing raw passwords.
+
+It turns sessions into database tables.
+, Not Selected
+Results for question 26.
+26
+1 / 1 point
+Multiple choice
+What is the main purpose of redisplaying old input after validation fails?
+
+To delete the failed record automatically.
+, Not Selected
+To bypass validation on the second submission.
+, Not Selected
+Correct answer:
+To let users correct mistakes without retyping every field.
+
+To show the database password.
+, Not Selected
+Results for question 27.
+27
+1 / 1 point
+Fill in the Blank
+What acronym refers to Create, Read, Update, and Delete operations? 
+Correct answer:
+CRUD
+Results for question 28.
+28
+1 / 1 point
+Multiple choice
+Which session value would be reasonable to store after login?
+
+The complete database dump.
+, Not Selected
+The user's plaintext password.
+, Not Selected
+Correct answer:
+The logged-in user's id or username.
+
+The Composer executable file.
+, Not Selected
+Results for question 29.
+29
+1 / 1 point
+Multiple choice
+Which form attribute is required when a CodeIgniter page must upload a file?
+
+Correct answer:
+enctype="multipart/form-data"
+
+target="_blank"
+, Not Selected
+autocomplete="off"
+, Not Selected
+method="GET"
+, Not Selected
+Results for question 30.
+30
+1 / 1 point
+Multiple choice
+What is flash data best used for?
+
+Long-term password storage.
+, Not Selected
+A database backup.
+, Not Selected
+A permanent user role table.
+, Not Selected
+Correct answer:
+A message that should be available only for the next request.
+Results for question 31.
+31
+1 / 1 point
+Multiple choice
+A developer stores the full password hash and user role in session after login. What should be evaluated?
+
+Whether views can run without controllers.
+, Not Selected
+Correct answer:
+Whether only necessary, non-sensitive session data is stored.
+
+Whether the public folder should store controllers.
+, Not Selected
+Whether sessions can replace all database queries.
+, Not Selected
+Results for question 32.
+32
+1 / 1 point
+True or False
+A CodeIgniter form that uploads files must use multipart/form-data.
+
+Correct answer:
+True
+False
+Results for question 33.
+33
+1 / 1 point
+Multiple choice
+What does validation_show_error('title') display in a CodeIgniter view?
+
+The controller class name.
+, Not Selected
+Correct answer:
+The validation message for the title field.
+
+The current route name.
+, Not Selected
+The uploaded file size.
+, Not Selected
+Results for question 34.
+34
+1 / 1 point
+True or False
+A login workflow usually redirects after successful authentication.
+
+Correct answer:
+True
+False
+Results for question 35.
+35
+1 / 1 point
+Multiple choice
+Which validation rule makes a form field required before the controller saves data?
+
+Correct answer:
+required
+
+present
+, Not Selected
+exists
+, Not Selected
+needed
+, Not Selected
+Results for question 36.
+36
+1 / 1 point
+Multiple choice
+Which line moves an uploaded file object named $file into the public uploads folder using a generated name?
+
+$file->render('uploads');
+, Not Selected
+$file->copyToDatabase($newName);
+, Not Selected
+Correct answer:
+$file->move(FCPATH . 'uploads', $newName);
+
+$file->saveAsRoute($newName);
+, Not Selected
+Results for question 37.
+37
+1 / 1 point
+Fill in the Blank
+What CodeIgniter constant points to the public front-controller path, often used when saving files under public/uploads? 
+Correct answer:
+FCPATH
+Results for question 38.
+38
+1 / 1 point
+Multiple choice
+Which approach is best when a real system should avoid permanently deleting user accounts?
+
+Run delete() through a GET link.
+, Not Selected
+Remove validation rules for delete routes.
+, Not Selected
+Correct answer:
+Use an archive or deactivation status when possible.
+
+Store deleted records in the view file.
+, Not Selected
+Results for question 39.
+39
+1 / 1 point
+Multiple choice
+What is the primary purpose of a session in a web application?
+
+To permanently replace the database.
+, Not Selected
+To write CSS rules into views.
+, Not Selected
+To create routes automatically.
+, Not Selected
+Correct answer:
+To store small user-related data across multiple requests.
+Results for question 40.
+40
+0 / 1 point
+Fill in the Blank
+What CodeIgniter feature is used for temporary messages such as 'Login successful'? 
+Incorrect answer:
+Flash Data
+Correct Answer:
+Flash data
+Results for question 41.
+41
+0 / 1 point
+Fill in the Blank
+What should a controller check before showing a protected page? 
+Incorrect answer:
+authentication status
+Correct Answer:
+Session/authentication state
+Results for question 42.
+42
+1 / 1 point
+True or False
+Deleting records through a normal GET link is a safe default for production systems.
+
+True
+Correct answer:
+False
+Results for question 43.
+43
+1 / 1 point
+Multiple choice
+A team wants every protected controller method to repeat the same session-check code. What is a better long-term approach?
+
+Store login code in each view.
+, Not Selected
+Correct answer:
+Use a reusable check, filter, or shared helper pattern.
+
+Remove authentication entirely.
+, Not Selected
+Use GET links for logout only.
+, Not Selected
+Results for question 44.
+44
+1 / 1 point
+Multiple choice
+What is a common reason to redirect after processing login?
+
+It deletes the controller.
+, Not Selected
+It disables validation.
+, Not Selected
+Correct answer:
+It prevents the same form submission from being repeated by browser refresh.
+
+It changes the PHP version.
+, Not Selected
+Results for question 45.
+45
+1 / 1 point
+Multiple choice
+What should be saved in the database after a successful public image upload?
+
+Correct answer:
+Only the generated filename or path needed to display the file.
+
+The user's original computer folder path.
+, Not Selected
+The contents of $_FILES without checking it.
+, Not Selected
+The entire binary file inside a text column.
+, Not Selected
+Results for question 46.
+46
+1 / 1 point
+Multiple choice
+Why should validation run before insert() or update() in a CodeIgniter controller?
+
+It makes the view load before the controller.
+, Not Selected
+It automatically creates the database table.
+, Not Selected
+Correct answer:
+It prevents invalid or unsafe input from being saved.
+
+It removes the need for routes.
+, Not Selected
+Results for question 47.
+47
+1 / 1 point
+Matching
+Matching type. Match the term with the correct description.
+
+Authentication
+Correct match:
+Verifies that a user is who they claim to be
+Results for question 48.
+48
+1 / 1 point
+True or False
+The uploaded file's original name should always be trusted as the final server filename.
+
+True
+Correct answer:
+False
+Results for question 49.
+49
+1 / 1 point
+Multiple choice
+A form field is named email, but the controller validates user_email. What is the most likely result?
+
+CodeIgniter will combine both names.
+, Not Selected
+The database will rename the column.
+, Not Selected
+Correct answer:
+Validation will not check the submitted email field correctly.
+
+The route will change automatically.
+, Not Selected
+Results for question 50.
+50
+1 / 1 point
+Multiple choice
+Which validation rule set best restricts an uploaded avatar to JPG or PNG images no larger than 2 MB?
+
+required|min_length[2]
+, Not Selected
+valid_email|permit_empty
+, Not Selected
+is_unique[avatar]
+, Not Selected
+Correct answer:
+uploaded[avatar]|max_size[avatar,2048]|mime_in[avatar,image/jpg,image/jpeg,image/png]

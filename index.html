@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Quiz Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dark-theme">
+
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-card">
+      <div class="login-logo">
+        <span class="login-logo-icon">🚀</span>
+        <h1 class="login-title">VIP Quiz Portal</h1>
+        <p class="login-subtitle">Authorized Access Only</p>
+      </div>
+      <div class="login-body">
+        <p style="color:var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Enter your passcode</p>
+        <input type="password" id="loginPassword" class="login-input" placeholder="Passcode" autocomplete="off" />
+        <div id="loginError" class="login-error hidden">Invalid passcode.</div>
+        <button id="loginBtn" class="login-submit">🔓 Enter Hub</button>
+      </div>
+    </div>
+  </div>
+
+
+  <header class="dashboard-header">
+    <div class="logo">
+      <span class="logo-icon">🚀</span>
+      <div class="logo-text">
+        <h1>Master Exam Prep Hub</h1>
+        <span>Your centralized learning and quiz platform</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="header-section">
+      <h2>Available Quizzes</h2>
+      <p>Select a topic below to start your exam simulation.</p>
+    </div>
+
+    <div class="quiz-grid">
+      
+      <!-- CCST Quiz Card -->
+      <a href="ccst/index.html" class="quiz-card">
+        <div class="quiz-card-banner ccst-banner">
+          <span class="banner-icon">🌐</span>
+        </div>
+        <div class="quiz-card-content">
+          <h3>CCST Networking</h3>
+          <p>Cisco Certified Support Technician Networking exam simulator. Covers standards, media, endpoints, and security.</p>
+          <div class="quiz-card-footer">
+            <span class="q-count">86 Questions</span>
+            <span class="btn-start">Start Quiz →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- CodeIgniter 4 Quiz Card -->
+      <a href="codeigniter/index.html" class="quiz-card">
+        <div class="quiz-card-banner ci4-banner">
+          <span class="banner-icon">🔥</span>
+        </div>
+        <div class="quiz-card-content">
+          <h3>CodeIgniter 4</h3>
+          <p>Comprehensive CI4 PHP Framework quiz. Covers MVC architecture, Routing, Validation, Sessions, and DB logic.</p>
+          <div class="quiz-card-footer">
+            <span class="q-count">100 Questions</span>
+            <span class="btn-start">Start Quiz →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Coming Soon Card -->
+      <div class="quiz-card placeholder-card">
+        <div class="quiz-card-content" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+          <span class="add-icon">➕</span>
+          <h3>More Coming Soon</h3>
+          <p>Ready to generate your next quiz.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <script>
+    const VALID_HASHES = [
+      '6c7d6aecbb61ab1dff69c3f4ffa90c6bf1a2afdbc5b8da7cbf77f70d31dbc001', // ACS2026
+      '3b9cc1e67a8f08a70a151a79b98631f76f717755d3aa7f2d943ffb816f104e13', // AD2026
+      '12a7cff00a2d4279deddb037a9b9614e3277ea4af7d8003c1f218ae1a2c48001', // WC2026
+      'dbce42c01b147bf1288fe8c20fb02ff4cdb77951fe348cd6f45ea44a18793880', // EM2026
+      '13ef0c436a851a1c594da8887487aa4251fabe8250c8774f76182cf08189c415'  // BLR2026
+    ];
+
+    async function sha256(message) {
+      const data = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    if (localStorage.getItem('hub_authenticated') === 'true') {
+      document.body.classList.add('authenticated');
+      document.getElementById('loginOverlay').classList.add('hidden');
+    }
+
+    async function attemptLogin() {
+      const pw = document.getElementById('loginPassword').value.trim();
+      if (!pw) return;
+      const hash = await sha256(pw);
+      if (VALID_HASHES.includes(hash)) {
+        localStorage.setItem('hub_authenticated', 'true');
+        document.body.classList.add('authenticated');
+        document.getElementById('loginOverlay').classList.add('hidden');
+      } else {
+        document.getElementById('loginError').classList.remove('hidden');
+        document.getElementById('loginPassword').value = '';
+      }
+    }
+
+    document.getElementById('loginBtn').addEventListener('click', attemptLogin);
+    document.getElementById('loginPassword').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') attemptLogin();
+    });
+  </script>
+
+</body>
+</html>
