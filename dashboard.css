@@ -229,3 +229,66 @@ body.dark-theme {
 }
 .login-submit:hover { background: #2563eb; }
 body:not(.authenticated) { overflow: hidden; }
+
+/* ===== Paradigm Wireframe Login Gate ===== */
+.paradigm-login-overlay {
+  background: rgba(20, 20, 20, 0.96) !important;
+  backdrop-filter: blur(8px);
+}
+
+.paradigm-login-card {
+  background: #181818 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 26px !important;
+  padding: 2.5rem 2.25rem !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75) !important;
+  max-width: 420px !important;
+}
+
+.paradigm-login-card .login-title {
+  color: #ffffff !important;
+  font-size: 1.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.paradigm-login-card .login-subtitle {
+  color: rgba(255, 255, 255, 0.68) !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.paradigm-login-card .login-input {
+  background: #141414 !important;
+  border: 1.5px dashed rgba(255, 255, 255, 0.55) !important;
+  border-radius: 14px !important;
+  color: #ffffff !important;
+  padding: 0.9rem 1rem !important;
+  font-size: 1rem !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.paradigm-login-card .login-input:focus {
+  border-style: solid !important;
+  border-color: #ffffff !important;
+  outline: none !important;
+}
+
+.paradigm-login-card .login-submit {
+  background: #ffffff !important;
+  color: #141414 !important;
+  border: 1.5px solid #ffffff !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  padding: 0.9rem 1.25rem !important;
+  margin-top: 0.75rem !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, opacity 0.15s ease !important;
+}
+
+.paradigm-login-card .login-submit:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
