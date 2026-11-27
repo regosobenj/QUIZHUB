@@ -121,6 +121,13 @@ body.dark-theme {
   background: linear-gradient(135deg, #059669, #10b981);
 }
 
+.disabled-card {
+  filter: grayscale(100%);
+  opacity: 0.55;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .quiz-card-content {
   padding: 1.5rem;
   display: flex;

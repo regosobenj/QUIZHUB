@@ -28,7 +28,13 @@
   </div>
 
   <script>
-    const VALID_HASHES = ['6db434a9b0cd52c5329b53603d776acfe5e60b7b8cf977b9395d1bb049ba2b07'];
+    const VALID_HASHES = [
+      '6c7d6aecbb61ab1dff69c3f4ffa90c6bf1a2afdbc5b8da7cbf77f70d31dbc001', // ACS2026
+      '3b9cc1e67a8f08a70a151a79b98631f76f717755d3aa7f2d943ffb816f104e13', // AD2026
+      '12a7cff00a2d4279deddb037a9b9614e3277ea4af7d8003c1f218ae1a2c48001', // WC2026
+      'dbce42c01b147bf1288fe8c20fb02ff4cdb77951fe348cd6f45ea44a18793880', // EM2026
+      '13ef0c436a851a1c594da8887487aa4251fabe8250c8774f76182cf08189c415'  // BLR2026
+    ];
 
     async function sha256(message) {
       const data = new TextEncoder().encode(message);

@@ -35,9 +35,26 @@
   const modalTitle = document.getElementById('modalTitle');
   const closeModal = document.getElementById('closeModal');
 
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  function shuffleQuiz() {
+    shuffleArray(questions);
+    questions.forEach(q => {
+      if (Array.isArray(q.options)) {
+        shuffleArray(q.options);
+      }
+    });
+  }
+
   // Initialize
   function init() {
     loadSavedState();
+    shuffleQuiz();
     setupEventListeners();
     renderGrid();
     renderQuestion(currentIndex);
@@ -250,6 +267,8 @@
       if (confirm('Are you sure you want to reset all answers and progress?')) {
         userResponses = {};
         flaggedQuestions.clear();
+        currentIndex = 0;
+        shuffleQuiz();
         saveState();
         renderGrid();
         renderQuestion(currentIndex);
