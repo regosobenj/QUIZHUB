@@ -11,6 +11,80 @@
 </head>
 <body class="dark-theme">
 
+  <!-- Wireframe Loading Screen -->
+  <div id="examLoader" class="exam-loader">
+    <div class="bento-loader-grid">
+      <!-- Top-Left: Rotating @ / Crosshair Nodes -->
+      <div class="bento-card bento-dashed bento-tl">
+        <svg viewBox="0 0 120 120" class="wire-svg">
+          <circle cx="60" cy="60" r="42" class="wire-stroke wire-draw" />
+          <circle cx="60" cy="60" r="24" class="wire-stroke wire-draw-delay" />
+          <line x1="12" y1="60" x2="108" y2="60" class="wire-dash" />
+          <line x1="60" y1="12" x2="60" y2="108" class="wire-dash" />
+          <g class="wire-spin">
+            <circle cx="60" cy="18" r="3.5" class="wire-node" />
+            <circle cx="102" cy="60" r="3.5" class="wire-node" />
+            <circle cx="60" cy="102" r="3.5" class="wire-node" />
+            <circle cx="18" cy="60" r="3.5" class="wire-node" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Top-Right: Vector Tools, Bezier, Cursor, Grid -->
+      <div class="bento-card bento-solid bento-tr">
+        <svg viewBox="0 0 280 120" class="wire-svg">
+          <!-- Align icons -->
+          <rect x="16" y="14" width="18" height="18" rx="4" class="wire-stroke" />
+          <line x1="20" y1="20" x2="30" y2="20" class="wire-stroke" />
+          <line x1="20" y1="24" x2="27" y2="24" class="wire-stroke" />
+          <!-- Letter A wireframe -->
+          <path d="M22 100 L42 38 L62 100 M29 80 L55 80" class="wire-stroke wire-draw" />
+          <line x1="42" y1="30" x2="72" y2="30" class="wire-stroke" />
+          <rect x="39" y="27" width="6" height="6" class="wire-node" />
+          <circle cx="72" cy="30" r="3" class="wire-node wire-pulse" />
+          <!-- Pen nib -->
+          <path d="M84 48 L96 42 L92 56 Z" class="wire-stroke wire-float" />
+          <!-- Number 6 / loop -->
+          <circle cx="128" cy="76" r="22" class="wire-stroke wire-draw-delay" />
+          <path d="M106 76 Q106 38 136 38" class="wire-stroke wire-draw" />
+          <!-- Cup / Eyedropper -->
+          <rect x="172" y="22" width="54" height="10" rx="2" class="wire-stroke" />
+          <path d="M178 36 L220 36 L214 98 Q199 104 184 98 Z" class="wire-stroke wire-draw" />
+          <circle cx="212" cy="88" r="14" class="wire-dash wire-pulse" />
+          <!-- Cursor & 2x2 grid -->
+          <path d="M240 20 L256 32 L248 34 L245 42 Z" class="wire-stroke wire-float" />
+          <rect x="238" y="62" width="14" height="14" rx="3" class="wire-dash" />
+          <rect x="256" y="62" width="14" height="14" rx="3" class="wire-dash" />
+          <rect x="238" y="80" width="14" height="14" rx="3" class="wire-dash" />
+          <rect x="256" y="80" width="14" height="14" rx="3" class="wire-dash" />
+        </svg>
+      </div>
+
+      <!-- Bottom-Left: Main Title "Preparing the exam" -->
+      <div class="bento-card bento-solid bento-bl">
+        <div class="loader-badge">IT0204</div>
+        <h2 class="loader-title">Preparing<br>the exam<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span></h2>
+        <div class="loader-progress-track">
+          <div class="loader-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Bottom-Right: Blueprint 'p' / Node Handles -->
+      <div class="bento-card bento-dashed bento-br">
+        <svg viewBox="0 0 120 120" class="wire-svg">
+          <line x1="34" y1="18" x2="34" y2="104" class="wire-stroke wire-draw" />
+          <circle cx="64" cy="54" r="28" class="wire-stroke wire-draw-delay" />
+          <circle cx="64" cy="54" r="14" class="wire-dash" />
+          <line x1="26" y1="54" x2="100" y2="54" class="wire-dash" />
+          <line x1="64" y1="20" x2="64" y2="90" class="wire-dash" />
+          <circle cx="34" cy="18" r="3" class="wire-node wire-pulse" />
+          <circle cx="34" cy="104" r="3" class="wire-node wire-pulse" />
+          <circle cx="92" cy="54" r="3" class="wire-node wire-pulse" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
   <!-- VIP Login Gate -->
   <div id="loginOverlay" class="login-overlay">
     <div class="login-card">

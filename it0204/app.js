@@ -59,6 +59,13 @@
     renderGrid();
     renderQuestion(currentIndex);
     updateStats();
+
+    const examLoader = document.getElementById('examLoader');
+    if (examLoader) {
+      setTimeout(() => {
+        examLoader.classList.add('fade-out');
+      }, 5000);
+    }
   }
 
   function setupEventListeners() {
