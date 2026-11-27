@@ -98,7 +98,20 @@
       document.getElementById('btnFinishExam').style.display = 'block';
       
       // Notify user about exam mode start
-      alert("Exam Mode Started! Check Answer buttons are disabled. Click 'Submit Exam' when finished.");
+      Swal.fire({
+        title: 'Exam Mode Started',
+        text: "Check Answer buttons are disabled. Click 'Submit Exam' when finished.",
+        icon: 'info',
+        confirmButtonText: 'Got it',
+        buttonsStyling: false,
+        customClass: {
+          popup: 'paradigm-swal',
+          title: 'paradigm-swal-title',
+          htmlContainer: 'paradigm-swal-text',
+          actions: 'paradigm-swal-actions',
+          confirmButton: 'paradigm-swal-confirm'
+        }
+      });
       renderQuestion(currentIndex);
     });
 
@@ -110,7 +123,7 @@
     // Event listener for Submit Exam
     const btnFinishExam = document.getElementById('btnFinishExam');
     if (btnFinishExam) {
-      btnFinishExam.addEventListener('click', () => {
+      btnFinishExam.addEventListener('click', async () => {
         const total = questions.length;
         let answered = 0;
         
@@ -122,7 +135,23 @@
         });
         
         if (answered < total) {
-          if (!confirm(`You have only answered ${answered} out of ${total} questions.\nAre you sure you want to submit your exam now?`)) {
+          const result = await Swal.fire({
+            title: 'Submit incomplete exam?',
+            text: `You have only answered ${answered} out of ${total} questions. Are you sure you want to submit your exam now?`,
+            showCancelButton: true,
+            confirmButtonText: 'Submit Exam',
+            cancelButtonText: 'Keep Answering',
+            buttonsStyling: false,
+            customClass: {
+              popup: 'paradigm-swal',
+              title: 'paradigm-swal-title',
+              htmlContainer: 'paradigm-swal-text',
+              actions: 'paradigm-swal-actions',
+              confirmButton: 'paradigm-swal-confirm',
+              cancelButton: 'paradigm-swal-cancel'
+            }
+          });
+          if (!result.isConfirmed) {
             return;
           }
         }
@@ -315,19 +344,36 @@
     });
 
     btnRevealAll.addEventListener('click', () => {
-      if (confirm('Reveal correct answers for all questions in study mode?')) {
-        questions.forEach(q => {
-          if (!userResponses[q.id]) {
-            userResponses[q.id] = { answers: [], isCorrect: true, submitted: true };
-          } else {
-            userResponses[q.id].submitted = true;
-          }
-        });
-        saveState();
-        renderGrid();
-        renderQuestion(currentIndex);
-        updateStats();
-      }
+      Swal.fire({
+        title: 'Reveal all answers?',
+        text: 'Reveal correct answers for all questions in study mode?',
+        showCancelButton: true,
+        confirmButtonText: 'Reveal All',
+        cancelButtonText: 'Cancel',
+        buttonsStyling: false,
+        customClass: {
+          popup: 'paradigm-swal',
+          title: 'paradigm-swal-title',
+          htmlContainer: 'paradigm-swal-text',
+          actions: 'paradigm-swal-actions',
+          confirmButton: 'paradigm-swal-confirm',
+          cancelButton: 'paradigm-swal-cancel'
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          questions.forEach(q => {
+            if (!userResponses[q.id]) {
+              userResponses[q.id] = { answers: [], isCorrect: true, submitted: true };
+            } else {
+              userResponses[q.id].submitted = true;
+            }
+          });
+          saveState();
+          renderGrid();
+          renderQuestion(currentIndex);
+          updateStats();
+        }
+      });
     });
 
     // Modal Events
