@@ -117,6 +117,10 @@ body.dark-theme {
   background: linear-gradient(135deg, #ea580c, #f97316);
 }
 
+.it0204-banner {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+
 .quiz-card-content {
   padding: 1.5rem;
   display: flex;
