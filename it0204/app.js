@@ -1,6 +1,7 @@
 // Cisco IT0204 Review Certification Application Logic
 (function() {
-  const questions = window.IT0204_QUESTIONS || [];
+  let questions = window.IT0204_QUESTIONS || [];
+  let currentSet = 1;
   let currentIndex = 0;
   let studyMode = true; // true = Study Mode (immediate feedback), false = Exam Mode
   let userResponses = {}; // { qId: { answers: [], isCorrect: bool, submitted: bool } }
@@ -66,6 +67,28 @@
         examLoader.classList.add('fade-out');
       }, 5000);
     }
+
+    const setSelectorOverlay = document.getElementById('setSelectorOverlay');
+    const btnSelectSet1 = document.getElementById('btnSelectSet1');
+    const btnSelectSet2 = document.getElementById('btnSelectSet2');
+
+    function startSet(setNum) {
+      currentSet = setNum;
+      questions = setNum === 2 ? (window.IT0204_SET2_QUESTIONS || []) : (window.IT0204_QUESTIONS || []);
+      userResponses = {};
+      flaggedQuestions.clear();
+      currentIndex = 0;
+      shuffleQuiz();
+      renderGrid();
+      renderQuestion(currentIndex);
+      updateStats();
+      if (setSelectorOverlay) {
+        setSelectorOverlay.classList.add('hidden');
+      }
+    }
+
+    if (btnSelectSet1) btnSelectSet1.addEventListener('click', () => startSet(1));
+    if (btnSelectSet2) btnSelectSet2.addEventListener('click', () => startSet(2));
   }
 
   function setupEventListeners() {

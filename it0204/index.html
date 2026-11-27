@@ -86,6 +86,38 @@
     </div>
   </div>
 
+  <!-- Set Selector Modal -->
+  <div id="setSelectorOverlay" class="set-selector-overlay">
+    <div class="set-selector-modal">
+      <div class="set-selector-header">
+        <span class="set-selector-badge">IT0204</span>
+        <h2>Choose Exam Set</h2>
+        <p>Select which exam set you want to take. Questions and choices are shuffled on every attempt.</p>
+      </div>
+      <div class="set-cards-grid">
+        <button id="btnSelectSet1" class="set-card">
+          <div class="set-card-top">
+            <span class="set-tag">SET 1</span>
+            <span class="set-count">100 Questions</span>
+          </div>
+          <h3>Core Concepts &amp; Incident Response</h3>
+          <p>Covers cybersecurity fundamentals, GDPR/DPA principles, incident response, frameworks, and emerging tech.</p>
+          <span class="set-start">Start Set 1 →</span>
+        </button>
+
+        <button id="btnSelectSet2" class="set-card set-card-law">
+          <div class="set-card-top">
+            <span class="set-tag">SET 2</span>
+            <span class="set-count">100 Questions</span>
+          </div>
+          <h3>Laws, Penalties &amp; ISO Standards</h3>
+          <p>Focuses on R.A. 10173, R.A. 10175 penalties, ISO/IEC standards, international data laws, and legal compliance.</p>
+          <span class="set-start">Start Set 2 →</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- VIP Login Gate -->
   <div id="loginOverlay" class="login-overlay">
     <div class="login-card">
@@ -282,6 +314,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="questions.js"></script>
+  <script src="questions_set2.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
