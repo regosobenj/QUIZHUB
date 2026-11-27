@@ -1425,3 +1425,65 @@ body.authenticated .login-overlay {
   .bento-bl { grid-column: 1 / 3; grid-row: 3 / 4; }
   .loader-title { font-size: 1.8rem; }
 }
+
+/* ===== Paradigm Wireframe SweetAlert2 Theme ===== */
+.paradigm-swal {
+  background: #181818 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 26px !important;
+  padding: 2rem !important;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7) !important;
+}
+
+.paradigm-swal-title {
+  color: #ffffff !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.paradigm-swal-text {
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 0.95rem !important;
+}
+
+.paradigm-swal-actions {
+  gap: 12px !important;
+  margin-top: 1.5rem !important;
+}
+
+.paradigm-swal-confirm {
+  background: #ffffff !important;
+  color: #141414 !important;
+  border: 1.5px solid #ffffff !important;
+  border-radius: 14px !important;
+  padding: 10px 22px !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, opacity 0.15s ease !important;
+}
+
+.paradigm-swal-confirm:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.paradigm-swal-cancel {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1.5px dashed rgba(255, 255, 255, 0.65) !important;
+  border-radius: 14px !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  cursor: pointer !important;
+  transition: border-color 0.15s ease, background 0.15s ease !important;
+}
+
+.paradigm-swal-cancel:hover {
+  border-color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}

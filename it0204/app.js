@@ -271,16 +271,47 @@
     });
 
     btnResetQuiz.addEventListener('click', () => {
-      if (confirm('Are you sure you want to reset all answers and progress?')) {
-        userResponses = {};
-        flaggedQuestions.clear();
-        currentIndex = 0;
-        shuffleQuiz();
-        saveState();
-        renderGrid();
-        renderQuestion(currentIndex);
-        updateStats();
-      }
+      Swal.fire({
+        title: 'Reset this exam?',
+        text: 'All your answers, progress, and flags will be cleared, and questions will be reshuffled.',
+        showCancelButton: true,
+        confirmButtonText: 'Reset Exam',
+        cancelButtonText: 'Cancel',
+        buttonsStyling: false,
+        customClass: {
+          popup: 'paradigm-swal',
+          title: 'paradigm-swal-title',
+          htmlContainer: 'paradigm-swal-text',
+          actions: 'paradigm-swal-actions',
+          confirmButton: 'paradigm-swal-confirm',
+          cancelButton: 'paradigm-swal-cancel'
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          userResponses = {};
+          flaggedQuestions.clear();
+          currentIndex = 0;
+          shuffleQuiz();
+          saveState();
+          renderGrid();
+          renderQuestion(currentIndex);
+          updateStats();
+
+          Swal.fire({
+            title: 'Exam Reset!',
+            text: 'Questions and choices have been reshuffled.',
+            icon: 'success',
+            timer: 1800,
+            showConfirmButton: false,
+            buttonsStyling: false,
+            customClass: {
+              popup: 'paradigm-swal',
+              title: 'paradigm-swal-title',
+              htmlContainer: 'paradigm-swal-text'
+            }
+          });
+        }
+      });
     });
 
     btnRevealAll.addEventListener('click', () => {
